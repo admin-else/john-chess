@@ -65,3 +65,11 @@ target_link_libraries(john-chess raylib)
 if(WIN32)
     target_link_libraries(john-chess winmm)
 endif()
+
+# Copy assets folder to build directory
+add_custom_command(TARGET john-chess POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/assets
+        $<TARGET_FILE_DIR:john-chess>/assets
+        COMMENT "Copying assets to build directory"
+)

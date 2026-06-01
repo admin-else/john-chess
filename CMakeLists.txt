@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(cchess C)
 
-set(CMAKE_C_STANDARD 23)
+set(CMAKE_C_STANDARD 11)
 
 # Add debug symbols and disable optimization
 set(CMAKE_C_FLAGS_DEBUG "-g -O0")

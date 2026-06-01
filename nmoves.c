@@ -7,11 +7,11 @@
 
 #include "types.h"
 
-constexpr int DIRECTIONS_ROOK[][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-constexpr int DIRECTIONS_BISHOP[][2] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
-constexpr int DIRECTIONS_QUEEN[][2] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}, {-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-constexpr int DIRECTIONS_KING[][2] = {{1, 0}, {1, 1}, {0, 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}};
-constexpr int DIRECTIONS_KNIGHT[][2] = {{2, 1}, {2, -1}, {-2, 1}, {-2, -1}, {1, 2}, {1, -2}, {-1, 2}, {-1, -2}};
+static const int DIRECTIONS_ROOK[][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+static const int DIRECTIONS_BISHOP[][2] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
+static const int DIRECTIONS_QUEEN[][2] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}, {-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+static const int DIRECTIONS_KING[][2] = {{1, 0}, {1, 1}, {0, 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}};
+static const int DIRECTIONS_KNIGHT[][2] = {{2, 1}, {2, -1}, {-2, 1}, {-2, -1}, {1, 2}, {1, -2}, {-1, 2}, {-1, -2}};
 
 int nmoves_pawn(board_t board, pos_t pos, int player) {
     int n = 0;

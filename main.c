@@ -8,8 +8,8 @@
 #include "textures.h"
 
 
-constexpr int max_shown_eval_advantage = 5;
-constexpr int eval_bar_width = 25;
+static const int max_shown_eval_advantage = 5;
+static const int eval_bar_width = 25;
 
 
 board_t default_board = {

@@ -2,6 +2,8 @@
 // Created by adman on 31.05.26.
 //
 
+#include <stdbool.h>
+
 #ifndef CCHESS_TYPES_H
 #define CCHESS_TYPES_H
 

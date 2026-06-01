@@ -66,6 +66,8 @@ Texture2D piece_to_texture(piece_t piece) {
             return piece_textures.black_queen;
         case PLAYER2_KING:
             return piece_textures.black_king;
-        default: //unreachable();
+        default:
+            break;
+            //unreachable();
     }
 }

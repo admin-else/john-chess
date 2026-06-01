@@ -181,6 +181,7 @@ pos_arr_t valid_moves(board_t board, pos_t pos) {
         case PLAYER2_KNIGHT:
             return moves_knight(board, pos, player);
         default:
+            break;
     }
     // unreachable
     return (pos_arr_t){.len = 0};

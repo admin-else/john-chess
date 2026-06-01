@@ -133,7 +133,9 @@ int nvalid_moves(board_t board, pos_t pos) {
         case PLAYER1_KNIGHT:
         case PLAYER2_KNIGHT:
             return nmoves_knight(board, pos, player);
-        default: //unreachable();
+        default:
+            break;
+            //unreachable();
     }
 }
 

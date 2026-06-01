@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "moves.h"
-#include "types.h"
-#include "nmoves.h"
+#include "../moves.h"
+#include "../types.h"
+#include "../nmoves.h"
 
 static pos_t find_king(board_t board, int player) {
     piece_t king = player == 0 ? PLAYER1_KING : PLAYER2_KING;

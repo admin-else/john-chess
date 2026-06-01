@@ -48,16 +48,16 @@ if(NOT raylib_FOUND)
     FetchContent_MakeAvailable(raylib)
 endif()
 
-add_executable(john-chess main.c
-        moves.c
-        types.h
-        moves.h
-        textures.c
-        textures.h
-        engine.c
-        nmoves.c
-        nmoves.h
-        engine.h
+add_executable(john-chess src/main.c
+        src/moves.c
+        src/types.h
+        src/moves.h
+        src/textures.c
+        src/textures.h
+        src/engine.c
+        src/nmoves.c
+        src/nmoves.h
+        src/engine.h
 )
 target_link_libraries(john-chess raylib)
 

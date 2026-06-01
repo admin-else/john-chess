@@ -6,7 +6,7 @@
 #define JOHN_CHESS_TEXTURES_H
 
 #include <raylib.h>
-#include "types.h"
+#include "../types.h"
 
 void load_piece_textures();
 

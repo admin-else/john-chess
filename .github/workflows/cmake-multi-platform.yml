@@ -74,17 +74,27 @@ jobs:
         # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
         run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
 
-      - name: Prepare artifact directory
+      - name: Prepare artifact directory (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path artifact
+          Copy-Item -Path "build/${{ matrix.build_type }}/john-chess.exe" -Destination "artifact/" -ErrorAction SilentlyContinue
+          if (-not $?) {
+            Copy-Item -Path "build/john-chess.exe" -Destination "artifact/"
+          }
+          Copy-Item -Path "build/${{ matrix.build_type }}/assets" -Destination "artifact/" -Recurse -ErrorAction SilentlyContinue
+          if (-not $?) {
+            Copy-Item -Path "build/assets" -Destination "artifact/" -Recurse
+          }
+
+      - name: Prepare artifact directory (Linux)
+        if: runner.os == 'Linux'
         shell: bash
         run: |
           mkdir -p artifact
-          if [ "${{ runner.os }}" == "Windows" ]; then
-            cp ${{ steps.strings.outputs.build-output-dir }}/${{ matrix.build_type }}/john-chess.exe artifact/ || cp ${{ steps.strings.outputs.build-output-dir }}/john-chess.exe artifact/
-            cp -r ${{ steps.strings.outputs.build-output-dir }}/${{ matrix.build_type }}/assets artifact/ || cp -r ${{ steps.strings.outputs.build-output-dir }}/assets artifact/
-          else
-            cp ${{ steps.strings.outputs.build-output-dir }}/john-chess artifact/
-            cp -r ${{ steps.strings.outputs.build-output-dir }}/assets artifact/
-          fi
+          cp build/john-chess artifact/
+          cp -r build/assets artifact/
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4

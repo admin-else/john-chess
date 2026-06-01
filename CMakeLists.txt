@@ -3,9 +3,18 @@ project(cchess C)
 
 set(CMAKE_C_STANDARD 11)
 
-# Add debug symbols and disable optimization
-set(CMAKE_C_FLAGS_DEBUG "-g -O0")
-set(CMAKE_C_FLAGS_RELEASE "-O3")
+
+# Compiler-specific flags
+if(MSVC)
+    # MSVC compiler flags
+    set(CMAKE_C_FLAGS_DEBUG "/Zi /Od")
+    set(CMAKE_C_FLAGS_RELEASE "/O2")
+else()
+    # GCC/Clang compiler flags
+    set(CMAKE_C_FLAGS_DEBUG "-g -O0")
+    set(CMAKE_C_FLAGS_RELEASE "-O3")
+endif()
+
 set(CMAKE_BUILD_TYPE Debug)
 
 # Windows-specific settings

@@ -84,6 +84,7 @@ float symmetric_eval(board_t b) {
                     score -= 1;
                     break;
                 default:
+                    break;
             }
         }
     }

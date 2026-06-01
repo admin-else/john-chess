@@ -77,10 +77,10 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: cchess-${{ matrix.os }}-${{ matrix.c_compiler }}-${{ matrix.build_type }}
+        name: john-chess-${{ matrix.os }}-${{ matrix.c_compiler }}-${{ matrix.build_type }}
         path: |
-          ${{ steps.strings.outputs.build-output-dir }}/cchess*
-          ${{ steps.strings.outputs.build-output-dir }}/${{ matrix.build_type }}/cchess*
+          ${{ steps.strings.outputs.build-output-dir }}/john-chess*
+          ${{ steps.strings.outputs.build-output-dir }}/${{ matrix.build_type }}/john-chess*
         if-no-files-found: warn
 
     #- name: Test

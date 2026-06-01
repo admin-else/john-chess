@@ -4,8 +4,8 @@
 
 #include <stdbool.h>
 
-#ifndef CCHESS_TYPES_H
-#define CCHESS_TYPES_H
+#ifndef JOHN_CHESS_TYPES_H
+#define JOHN_CHESS_TYPES_H
 
 #define PLAYER1_COLOR WHITE
 #define PLAYER2_COLOR BLACK
@@ -104,4 +104,4 @@ static pos_t pos_add(pos_t pos, int file, int rank) {
     return (pos_t){.file = pos.file + file, .rank = pos.rank + rank};
 }
 
-#endif //CCHESS_TYPES_H
+#endif //JOHN_CHESS_TYPES_H

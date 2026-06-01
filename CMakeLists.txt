@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(cchess C)
+project(john-chess C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -48,7 +48,7 @@ if(NOT raylib_FOUND)
     FetchContent_MakeAvailable(raylib)
 endif()
 
-add_executable(cchess main.c
+add_executable(john-chess main.c
         moves.c
         types.h
         moves.h
@@ -59,9 +59,9 @@ add_executable(cchess main.c
         nmoves.h
         engine.h
 )
-target_link_libraries(cchess raylib)
+target_link_libraries(john-chess raylib)
 
 # Windows-specific libraries
 if(WIN32)
-    target_link_libraries(cchess winmm)
+    target_link_libraries(john-chess winmm)
 endif()

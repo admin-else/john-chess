@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -95,7 +96,10 @@ float symmetric_eval(board_t b) {
     return score;
 }
 
-float negated_minimax(board_t board, int depth, int player) {
+int debugCallsNM = 0;
+
+float negated_minimax(board_t board, int depth, int player, float alpha, float beta) {
+    debugCallsNM++;
     if (depth == 0) {
         float eval = symmetric_eval(board);
         return player == 0 ? eval : -eval;
@@ -121,9 +125,16 @@ float negated_minimax(board_t board, int depth, int player) {
                     continue;
                 }
 
-                float score = -negated_minimax(next_board, depth - 1, player ^ 1);
+                float score = -negated_minimax(next_board, depth - 1, player ^ 1, -beta, -alpha);
                 if (score > max) {
                     max = score;
+                    if (score > alpha) {
+                        alpha = score;
+                    }
+                }
+                if (score >= beta) {
+                    free(moves.data);
+                    return score;
                 }
             }
             free(moves.data);
@@ -156,7 +167,7 @@ void bot_move(board_t board, int player, int depth) {
                 if (is_player_in_check(board, player)) {
                     continue;
                 }
-                float score = -negated_minimax(next_board, depth, player ^ 1);
+                float score = -negated_minimax(next_board, depth, player ^ 1, -INFINITY, INFINITY);
                 if (score > max) {
                     from = pos;
                     to = moves.data[k];
@@ -169,4 +180,5 @@ void bot_move(board_t board, int player, int depth) {
     piece_t holding = board_get(board, from);
     board_set(board, from, EMPTY);
     board_set(board, to, holding);
+    printf("Bot move: %d %d %d %d called minimax %d times\n", from.file, from.rank, to.file, to.rank, debugCallsNM);
 }

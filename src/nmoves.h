@@ -4,7 +4,7 @@
 
 #ifndef JOHN_CHESS_NMOVES_H
 #define JOHN_CHESS_NMOVES_H
-#include "../types.h"
+#include "types.h"
 
 int nvalid_moves_board(board_t board, int player);
 

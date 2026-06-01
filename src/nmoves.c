@@ -5,7 +5,7 @@
 
 #include <stddef.h>
 
-#include "../types.h"
+#include "types.h"
 
 static const int DIRECTIONS_ROOK[][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 static const int DIRECTIONS_BISHOP[][2] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};

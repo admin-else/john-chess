@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../engine.h"
-#include "../types.h"
-#include "../moves.h"
-#include "../textures.h"
+#include "engine.h"
+#include "types.h"
+#include "moves.h"
+#include "textures.h"
 
 
 static const int max_shown_eval_advantage = 5;

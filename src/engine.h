@@ -4,7 +4,7 @@
 
 #ifndef JOHN_CHESS_ENGINE_H
 #define JOHN_CHESS_ENGINE_H
-#include "../types.h"
+#include "types.h"
 
 float symmetric_eval(board_t b);
 

@@ -1,7 +1,7 @@
 #include <raylib.h>
 #include <stddef.h>
 
-#include "../types.h"
+#include "types.h"
 //
 // Created by adman on 31.05.26.
 //

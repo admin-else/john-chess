@@ -24,19 +24,19 @@ typedef struct {
 piece_textures_t piece_textures;
 
 void load_piece_textures() {
-    piece_textures.white_pawn = LoadTexture("../assets/pieces/white/pawn.png");
-    piece_textures.white_rook = LoadTexture("../assets/pieces/white/rook.png");
-    piece_textures.white_bishop = LoadTexture("../assets/pieces/white/bishop.png");
-    piece_textures.white_knight = LoadTexture("../assets/pieces/white/knight.png");
-    piece_textures.white_queen = LoadTexture("../assets/pieces/white/queen.png");
-    piece_textures.white_king = LoadTexture("../assets/pieces/white/king.png");
+    piece_textures.white_pawn = LoadTexture("assets/pieces/white/pawn.png");
+    piece_textures.white_rook = LoadTexture("assets/pieces/white/rook.png");
+    piece_textures.white_bishop = LoadTexture("assets/pieces/white/bishop.png");
+    piece_textures.white_knight = LoadTexture("assets/pieces/white/knight.png");
+    piece_textures.white_queen = LoadTexture("assets/pieces/white/queen.png");
+    piece_textures.white_king = LoadTexture("assets/pieces/white/king.png");
 
-    piece_textures.black_pawn = LoadTexture("../assets/pieces/black/pawn.png");
-    piece_textures.black_rook = LoadTexture("../assets/pieces/black/rook.png");
-    piece_textures.black_bishop = LoadTexture("../assets/pieces/black/bishop.png");
-    piece_textures.black_knight = LoadTexture("../assets/pieces/black/knight.png");
-    piece_textures.black_queen = LoadTexture("../assets/pieces/black/queen.png");
-    piece_textures.black_king = LoadTexture("../assets/pieces/black/king.png");
+    piece_textures.black_pawn = LoadTexture("assets/pieces/black/pawn.png");
+    piece_textures.black_rook = LoadTexture("assets/pieces/black/rook.png");
+    piece_textures.black_bishop = LoadTexture("assets/pieces/black/bishop.png");
+    piece_textures.black_knight = LoadTexture("assets/pieces/black/knight.png");
+    piece_textures.black_queen = LoadTexture("assets/pieces/black/queen.png");
+    piece_textures.black_king = LoadTexture("assets/pieces/black/king.png");
 }
 
 // piece_t MUST NOT BE EMPTY CHECK THAT BEFRORE
